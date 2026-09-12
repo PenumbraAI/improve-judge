@@ -1,0 +1,13 @@
+{
+  "name": "improve-judge",
+  "description": "Iterate on an LLM-as-a-judge prompt: run it over test cases, reflect on its verdicts, gate proposed prompt edits through editorial review, and seed the next iteration.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Pete Werner",
+    "email": "info@penumbra.software",
+    "url": "https://penumbra.software"
+  },
+  "repository": "https://github.com/PenumbraAI/improve-judge",
+  "license": "PolyForm Perimeter License 1.0.1",
+  "keywords": ["evals", "judge", "scorers"]
+}

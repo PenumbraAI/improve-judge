@@ -1,0 +1,1 @@
+{"name": "appropriate_title", "model": "gateway:/anthropic-claude-haiku-endpoint", "instructions": "Evaluate that the machine generated title  {{ outputs }}  is a reasonable characterization of {{ inputs }}", "feedback_value_type": "bool"}

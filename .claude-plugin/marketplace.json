@@ -1,0 +1,15 @@
+{
+  "name": "improve-judge",
+  "description": "Marketplace for improve-judge, a Claude Code plugin for iterating on LLM-as-a-judge prompts.",
+  "owner": {
+    "name": "Pete Werner",
+    "email": "info@penumbra.software"
+  },
+  "plugins": [
+    {
+      "name": "improve-judge",
+      "source": "./",
+      "description": "Iterate on an LLM-as-a-judge prompt: run it over test cases, reflect on its verdicts, gate proposed prompt edits through editorial review, and seed the next iteration."
+    }
+  ]
+}
