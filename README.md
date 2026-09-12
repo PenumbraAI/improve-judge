@@ -7,6 +7,7 @@ next iteration. See `doc/iteration-loop.md` for the full stage contract.
 ## Prerequisites
 
 - An MLflow tracking server reachable from the environment (`MLFLOW_TRACKING_URI`).
+  See [MLFlow Configuration](#mlflow-configuration) below for details.
 - Python 3 with `mlflow`, `jsonlines`, and `requests` installed. This plugin
   does not install these — Claude Code has no Python dependency mechanism, so
   run e.g. `pip install mlflow jsonlines requests` before using it.
@@ -68,3 +69,46 @@ Or drive the five stages by hand — see `doc/iteration-loop.md` — invoking
 - `scripts/judge-helper.py` — manages judges registered on the MLflow tracking
   server: list/start/stop/set-model/import/export/ping-gw (see
   `doc/tool-judge-helper.md`).
+
+
+## MLFlow Configuration
+
+### Tracking Server
+
+Start a local server with
+
+```
+mflow server
+```
+
+See https://mlflow.org/docs/latest/self-hosting/architecture/tracking-server/ for details.
+
+### Environment Variables
+
+Configure the environment with the MFLow Tracking Server and Experiment information:
+
+```
+export MLFLOW_TRACKING_URI="http://127.0.0.1:5000"
+export MLFLOW_EXPERIMENT_ID="0"
+```
+
+Or, add them to .claude/settings.json 
+
+```
+  "env": {
+    "MLFLOW_TRACKING_URI": "http://127.0.0.1:5000",
+    "MLFLOW_EXPERIMENT_ID": "0"
+  }
+```
+
+### Judge AI Gateway Endpoint
+
+An AI Gateway Endpoint configured in MLFlow is required. See here for more 
+information https://mlflow.org/docs/latest/genai/governance/ai-gateway/quickstart/
+
+The example assumes an endpoint named anthropic-claude-haiku-endpoint
+accessed as `gateway:/anthropic-claude-haiku-endpoint`
+
+This can be set as part of the judges configuration or overridden with the `--model` argument  
+
+
